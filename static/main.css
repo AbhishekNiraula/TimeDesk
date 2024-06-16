@@ -1,0 +1,348 @@
+body {
+    background: url('https://images.unsplash.com/photo-1439723680580-bfd9d28ef9b6?crop=entropy&fit=crop&fm=jpg&h=950&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1925') no-repeat center center fixed;
+
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    padding: 0px;
+    margin: 0px;
+}
+.icon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+/* For navbar */
+.navigation {
+    width: 20rem;
+    position: fixed;
+    z-index: 10;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    background: rgba(81,98,206);
+    border-radius: 0px 10px 10px 0px;
+    transition: all 0.4s;
+}
+.navigation li {
+    list-style-type: none;
+}
+.brand {
+    font-weight: bold;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    padding-right: .4rem;
+    padding-left: 2rem;
+    color: white;
+    list-style-type: none;
+}
+.brand:hover {
+    color: white !important;
+    text-decoration: none;
+}
+.separation {
+    width: auto;
+    height: 2px;
+    background-color: #e16b5a;
+}
+.item {
+    color: white !important;
+    padding: 1.5rem;
+    width: 100%;
+    margin: 4px;
+    font-size: 1.2rem;
+    font-family: 'Kanit', sans-serif;
+    list-style-type: none;
+}
+.item a {
+    text-decoration: none;
+    color: white;
+}
+.item:hover a {
+    color: #e16b5a;
+    transition: .5s;
+}
+.item a svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/* For navbar */
+.toggler {
+    cursor: pointer;
+    margin-left: 23rem;
+    border: 2px solid black;
+    list-style-type: none;
+}
+#special {
+    text-align: center;
+    border-radius: 6px;
+    width: 10rem;
+    background: #e16b5a;
+}
+#special:hover {
+    color: #e16b5a;
+    cursor: pointer;
+    transition: .5s;
+    background: white;
+    box-shadow: 0px 0px 0px 3px #e16b5a inset;
+}
+
+
+/* For timer part */
+#pomo {
+    display: flex;
+    margin-right: 2rem;
+    padding-top: 8rem;
+    margin-left: 2rem;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+.timer {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    width: auto;
+    text-align: center;
+    height: auto;
+    margin-top: -4rem;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.navigation.active {
+    margin-left: -20rem;
+}
+@media screen and (max-width: 740px) {
+    .navigation {
+        width: 5rem;
+    }
+    .brand span {
+        display: none;
+    }
+    .navigation li a span {
+        display: none;
+    }
+    .navigatoin li a svg {
+        display: block !important;
+        width: 3rem;
+        height: 3rem;
+    }
+}
+@media screen and (max-width: 1130px){
+    #pomo {
+        margin-left: 14rem;
+    }
+}
+@media screen and (min-width: 1130px){
+    #pomo {
+        margin-left: 20rem;
+    }
+}
+@media (max-width: 980px){
+    #pomo {
+        margin-left: 20rem;
+    }
+}
+@media (min-width: 980px){
+    .main {
+        justify-content: center;
+    }
+}
+/* Button styling of the pause and start */
+#toggle {
+    height: 2.5rem;
+    width: 12rem;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    background-color: #9B59B6;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+#toggle:hover {
+    background-color: #8E44AD;
+    transition: .5s;
+    font-size: 1.2rem;
+}
+.timer_ul {
+    display: flex;
+    justify-content: center;
+}
+.timer_options {
+    text-align: center;
+    justify-content: center;
+}
+.timer_options li {
+    float: left;
+    margin: 1rem 1rem 0rem 1rem;
+    list-style-type: none;
+    text-decoration: none;
+}
+.timer_options li button {
+    font-weight: bold;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    padding: .5rem;
+    width: auto;
+    height: auto;
+    border: none;
+    font-family: 'Mukta', sans-serif;
+    font-size: 1.1rem;
+}
+.timer_options li button:focus , .timer_options li button:checked {
+    outline: none;
+    border: none;
+}
+.timer_options li button:hover {
+    color: black;
+    background-color: white;
+    transition: .5s;
+    font-weight: bold;
+    border-color: black;
+}
+@media screen and (max-width: 850px){
+    .timer_options li button {
+        font-size: 0.7rem;
+    }
+    #pomo {
+        margin-right: auto;
+    }
+
+}
+.study {
+    font-family: 'Pacifico', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 3rem;
+}
+#time {
+    color: white;
+    font-family: 'Varela', sans-serif;
+}
+#time span {
+    font-size: 8rem;
+}
+/* For timer part */
+@media screen and (max-width: 739px){
+    #pomo {
+        margin-left: 6rem;
+    }
+}
+.horizontal {
+    width: auto;
+    height: 2px;
+    background-color: #f64c71;
+}
+.tasks {
+    width: auto;
+    display: block;
+    height: 4rem;
+    transition: 0.5s;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid #f64c71;
+    border-style: dashed;
+    border-radius: 10px;
+}
+#add_task {
+    margin-top: 1rem;
+    outline: none;
+    border: none;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    background: transparent;
+}
+#add_task:focus , #add_task::checked {
+    outline: none;
+    border: none;
+}
+form {
+    text-align: center;
+}
+#task_form {
+    width: 90%;
+    height: auto;
+    padding: 10px;
+    background: white;
+    transition: 0.5s;
+    display: none;
+    border-radius: 10px;
+}
+.textarea {
+    border-radius: 10px;
+    width: 100%;
+    padding: 20px;
+    border: 2px solid black;
+    font-weight: bold;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.1rem;
+    outline: none;
+}
+.textarea:focus, .textarea:checked {
+    outline: none;
+}
+#task_form label {
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+}
+.time {
+    margin-left: 0.4rem;
+    margin-bottom: 0.4rem;
+    color: black;
+    padding: 3px;
+    background: #CCD1D1;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: auto;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+    height: 2rem;
+    text-align: center;
+}
+.time::placeholder {
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}
+.buttons {
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+#cancel, #submit {
+    font-family: 'Kanit', sans-serif;
+    color: black;
+    background: transparent;
+    outline: none;
+    border: none;
+    float: left;
+    padding-left: 10px;
+}
+#cancel:hover, #submit:hover {
+    cursor: pointer;
+}
+.task_list {
+    width: 100%;
+    height: auto;
+    padding: 0.4rem;
+    font-family: 'Kanit', sans-serif;
+    color: black;
+    font-weight: bold;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #E74C3C;
+}
+.remove {
+    outline: none;
+    font-famil
+
+}

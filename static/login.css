@@ -1,0 +1,146 @@
+/* Styling for login and register page */
+body {
+    background-image: linear-gradient(rgba(7, 9, 30, 0.4), rgba(7, 9, 30, 0.4)), url('https://images.unsplash.com/photo-1642201294656-5958ee03c531?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1260&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    width: 100%;
+    height: 100%;
+
+}
+header {
+    display: flex;
+    padding-top: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+#main {
+    height: auto;
+    padding: 1.4rem;
+    border-radius: 15px;
+    width: 30rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.login {
+    font-family: 'Kanit', sans-serif;
+    color: black;
+    width: auto;
+    display: inline-block;
+    font-size: 2rem;
+    border-bottom: .25rem solid black;
+    border-bottom-color: #6b0f1a;
+}
+.login-line {
+    width: auto;
+    height: 0.7px;
+    background-color: black;
+}
+.inputbox {
+    position: relative;
+}
+.inputbox input {
+    width: 22rem;
+    padding: 10px 0;
+    font-size: 18px;
+    font-family: 'Kanit', sans-serif;
+    color: black;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 2px solid #424949;
+    outline: none;
+    background: transparent;
+}
+.inputbox label {
+    padding: 17px 0;
+    position: absolute;
+    top: 0;
+    font-family: 'Ubuntu', sans-serif;
+    left: 2.6rem;
+    color: #424949;
+    font-size: 1rem;
+    transition: .5s;
+}
+.inputbox input:focus ~ label,
+.inputbox input:valid  ~ label {
+    top: -27px;
+    color: #424949;
+    font-size: 1rem;
+}
+.welcome {
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'Cabin', sans-serif;
+}
+.forget {
+    font-weight: bold;
+    padding-bottom: 10px;
+    font-family: 'Cabin', sans-serif;
+}
+.forget .the {
+    color: #EC7063;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-decoration: none;
+}
+.forget .the:hover {
+    transition: .5s;
+    text-decoration: underline;
+}
+.continue {
+    width: 22rem;
+    height: 2.5rem;
+    outline: none;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.1rem;
+    color: white;
+    font-family: 'Cabin', font-family;
+    background: #3494E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EC6EAD, #3494E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.continue:focus,
+.continue:valid {
+    outline: none;
+    border: none;
+}
+.another {
+    font-family:'Cabin', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.register {
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.2rem;
+    color: #5B2C6F;
+    font-weight: bold;
+    text-decoration: bold;
+    cursor: pointer;
+}
+.register:hover {
+    color: #5B2C6F;
+}
+@media screen and (max-width: 420px){
+    .inputbox label {
+        left: 0.2rem;
+    }
+}
+#message {
+    padding-left: 2.5rem;
+    padding-bottom: .4rem;
+    display: none;
+    text-align: justify;
+    color: black;
+}
+#message .invalid {
+    color: red;
+    transition: .5s;
+}
+#message .valid {
+    color: green;
+    transition: .5s;
+}

@@ -1,0 +1,69 @@
+{% extends "layout_2.html" %}
+{% block head %}
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, width=device-width">
+
+<link rel="stylesheet" href="/static/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Mukta&family=Outfit&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Varela&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    Study Timer
+{% endblock %}
+
+{% block main %}
+    <!-- document.getElementById('document.getElementById('pomodoro')doro') -->
+    <div id="pomo" style="display: flex;">
+    <div class="timer">
+        <h1 class="study">Study</h1>
+        <div class="timer_ul">
+            <ul class="timer_options">
+                <li><button id="pomodoro" class="active">Pomodoro</button></li>
+                <li><button id="short_button">Short Break</button></li>
+                <li><button id="long_button">Long Break</button></li>
+            </ul>
+        </div>
+        <h1 id="time"><span id="minute">25</span><span>:</span><span id="second">00</span></h1>
+        <button type="button" id="toggle">Start</button>
+        <audio id="audio_close" src="/static/sounds/button_close.mp3"></audio>
+        <audio id="audio_start" src="/static/sounds/button_start.mp3"></audio>
+        <audio id="tick_second" src="/static/sounds/clock_tick.mp3"></audio>
+        <audio id="ringtone" src="/static/sounds/Alarm-ringtone.mp3"></audio>
+        <br><hr class="horizontal"><br>
+        {% for task in tasks %}
+        <div class="task_list">
+            <p class="task_value">Your Task: {{ task['task'] }}</p>
+            <p id="time_value">Your Estimated Time: <span class="num_time">{{ task['time'] }}</span>Minutes</p>
+            <form action="/remove_task" method="POST">
+                <input type="hidden" value="{{ task['task'] }}" name="task2">
+                <button class="remove">Remove</button>
+            </form>
+        </div>
+        {% endfor %}
+        <br>
+        <div class="tasks" id="task_show" type="button">
+            <button id="add_task" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/></svg>    Add Task</button>
+        </div>
+        <br>
+        <form action="/" method="POST">
+            <div id="task_form">
+                <textarea class="textarea" type="text" name="task" cols="1" autofocus placeholder="Add Your Task Here!!"></textarea>
+                <br>
+                <label for="time">Estimated Time(In Minutes):</label>
+                <input class="time" type="number" name="time" min="1" placeholder="Est. Time(In Mins.)">
+                <br>
+                <ul class="buttons">
+                    <li id="cancel">Cancel</li>
+                    <li><button id="submit">Submit</button></li>
+                </ul>
+            </div>
+        </form>
+
+    </div>
+    </div>
+    <br><br>
+
+    <script src="/static/main.js"></script>
+{% endblock %}

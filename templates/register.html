@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/login.css">
+{% endblock %}
+
+{% block main %}
+    <header>
+    <div id="main">
+        <h1 class="login">Register</h1>
+        <hr class="login-line">
+        <p class="welcome">Let's Get Started.</p>
+        <form method="POST" action="/register">
+            <div class="inputbox">
+                <input type="text" name="username" required="" autofocus>
+                <label>Username</label>
+            </div>
+            <h6 id="message">Your password must be <span id="length" class="invalid">8 characters long</span> with <span id="letter" class="invalid">proper characters</span>, <span id="capital" class="invalid">uppercase letters</span> and <span id="number" class="invalid">numbers.</span></h6>
+            <div class="inputbox">
+                <input type="password" id="password" name="password" required="">
+                <label>Password</label>
+            </div>
+            <div class="inputbox">
+                <input type="password" name="confirm" required="">
+                <label>Confirm Password</label>
+            </div>
+        <button class="continue"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/></svg>  Continue</button>
+        </form>
+        <hr class="login-line">
+        <p class="another">Alredy Have an Account?</p>
+        <a class="register" href="/login">Login</a>
+    </div>
+    </header>
+    <!-- For password part -->
+    <script>
+    // Answer from https://www.w3schools.com/howto/howto_js_password_validation.asp
+    var myInput = document.getElementById("password");
+    var letter = document.getElementById("letter");
+    var capital = document.getElementById("capital");
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
+
+    // When the user clicks on the password field, show the message box
+    myInput.onfocus = function() {
+        document.getElementById("message").style.display = "block";
+    }
+
+    // When the user clicks outside of the password field, hide the message box
+    myInput.onblur = function() {
+        document.getElementById("message").style.display = "none";
+    }
+
+    // When the user starts to type something inside the password field
+    myInput.onkeyup = function() {
+        // Validate lowercase letters
+        var lowerCaseLetters = /[a-z]/g;
+        if(myInput.value.match(lowerCaseLetters)) {
+        letter.classList.remove("invalid");
+        letter.classList.add("valid");
+        } else {
+        letter.classList.remove("valid");
+        letter.classList.add("invalid");
+    }
+
+    // Validate capital letters
+        var upperCaseLetters = /[A-Z]/g;
+        if(myInput.value.match(upperCaseLetters)) {
+        capital.classList.remove("invalid");
+        capital.classList.add("valid");
+        } else {
+        capital.classList.remove("valid");
+        capital.classList.add("invalid");
+    }
+
+    // Validate numbers
+        var numbers = /[0-9]/g;
+        if(myInput.value.match(numbers)) {
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+        } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+    }
+
+    // Validate length
+        if(myInput.value.length >= 8) {
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+        } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+    }
+    }
+    </script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/index.css">
+{% endblock %}
+
+{% block main %}
+    <div id="error">
+        <img alt="{{ top }}" class="border" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://i.pinimg.com/236x/4f/2d/45/4f2d4577a3df98e60ffb50c9693a6637.jpg" title="{{ top }}">
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/login.css">
+{% endblock %}
+
+{% block main %}
+    <br>
+    <header>
+    <div id="main">
+        <h1 class="login">Login</h1>
+        <hr class="login-line">
+        <p class="welcome">Welcome back! Login to access TimeDesk.</p>
+        <p class="forget">Did you <a class="the">forget the password?</a></p>
+        <form method="POST" action="/login">
+            <div class="inputbox">
+                <input type="text" name="username" required="" autofocus>
+                <label>Username</label>
+            </div>
+            <div class="inputbox">
+                <input type="password" name="password" required="">
+                <label>Password</label>
+            </div>
+        <button class="continue"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/></svg>  Continue</button>
+        </form>
+        <hr class="login-line">
+        <p class="another">Want To Choose Another Way?</p>
+        <a class="register" href="/register">Register</a>
+    </div>
+    </header>
+{% endblock %}

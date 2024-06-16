@@ -1,0 +1,32 @@
+/* Styling for contact us page */
+body {
+    background: url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    padding: 0px;
+    margin: 0px;
+}
+.navbar {
+    background: rgba(231, 76, 60, 0.6) !important;
+    border-radius: 0px !important;
+}
+#partial {
+    background: linear-gradient(rgba(7, 9, 30, 0.4), rgba(7, 9, 30, 0.4)) ,url('https://images.unsplash.com/photo-1510784722466-f2aa9c52fff6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
+.text_partial {
+    font-family: 'Dongle', sans-serif;
+    font-size: 1.8em;
+}
+.contact {
+    font-weight: bold;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.8em;
+}
